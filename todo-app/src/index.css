@@ -1,0 +1,286 @@
+body { 
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  background-color: #f5f7fa; 
+  margin: 0;
+  transition: background-color 0.3s ease;
+} 
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #222;
+  color: #eee;
+}
+
+.app-container { 
+  text-align: center; 
+  background: white; 
+  padding: 25px; 
+  border-radius: 12px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+  width: 400px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Make this a positioning context */
+}
+
+/* Dark Mode for Container */
+body.dark-mode .app-container {
+  background: #333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.todo-header {
+  margin-bottom: 20px;
+}
+
+.todo-header h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.todo-input-group {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.todo-input-group input {
+  flex-grow: 1;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  justify-content: center;
+}
+
+.filter-buttons button {
+  flex: 1;
+  max-width: 100px;
+}
+
+.todo-container { 
+  margin-top: 20px; 
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+} 
+
+input { 
+  padding: 10px 12px; 
+  border: 1px solid #ddd; 
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+} 
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+body.dark-mode input {
+  background-color: #444;
+  border-color: #555;
+  color: #eee;
+}
+
+button { 
+  padding: 10px 14px; 
+  cursor: pointer; 
+  border: none; 
+  border-radius: 6px;
+  background-color: #007bff; 
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+} 
+
+button:hover { 
+  background-color: #0069d9; 
+  transform: translateY(-1px);
+} 
+
+ul { 
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+} 
+
+li { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background: #f8f9fa; 
+  padding: 12px 15px; 
+  border-radius: 6px; 
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+
+li:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.task-text {
+  margin-left: 10px;
+  word-break: break-word;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Completed Task Styling */
+.completed .task-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Dark Mode Task Styling */
+body.dark-mode li {
+  background: #444;
+}
+
+/* Edit Button */
+.edit-btn { 
+  background-color: #ffc107; 
+  color: #212529;
+} 
+
+.edit-btn:hover { 
+  background-color: #e0a800;
+} 
+
+/* Remove Button */
+.remove-btn { 
+  background-color: #dc3545;
+} 
+
+.remove-btn:hover { 
+  background-color: #c82333;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 18px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border: none;
+}
+
+.dark-mode-toggle:hover {
+  transform: rotate(15deg) scale(1.1);
+  background-color: #e0e0e0;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  background-color: #666;
+}
+
+.edit-input-group {
+  display: flex;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.edit-input-group input {
+  flex-grow: 1;
+}
+
+/* App title styling */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-title {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.title-icon {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.title-text {
+  background: linear-gradient(45deg, #007bff, #00d2ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+body.dark-mode .app-title {
+  color: #ecf0f1;
+}
+
+body.dark-mode .title-text {
+  background: linear-gradient(45deg, #00a8ff, #00d2ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .title-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+}
