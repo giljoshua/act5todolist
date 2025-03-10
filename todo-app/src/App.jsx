@@ -1,4 +1,4 @@
-import TodoList from "todo-app/src/assets/components/ToDoList"; 
+import TodoList from "./assets/components/ToDoList.jsx"; 
 function App() { 
   return ( 
     <div className="app-wrapper"> 
